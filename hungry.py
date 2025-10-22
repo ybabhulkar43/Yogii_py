@@ -10,5 +10,6 @@ else:
           print('Drink water..')
           print('Drink soda..')
           print('drink juice...')
+          print('Drink milk...')
      else:
           print('Okay, have a nice day!')
