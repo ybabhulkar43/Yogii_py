@@ -9,5 +9,6 @@ else:
      if thirsty.lower() == 'yes':
           print('Drink water..')
           print('Drink soda..')
+          print('drink juice...')
      else:
           print('Okay, have a nice day!')
