@@ -3,5 +3,6 @@ if input=='yes':
      print('Eat samosa...')
      print('Eat burger...')
      print('Eat pizza...')
+     print('Eat fries..')
 else:
      print('Do your homework...')
