@@ -1,0 +1,13 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "this is the runtime enviorment to connect with database ",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://yogiistorageacc.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDAxOTdEQTNFLTA1NzYtNEY2RC1CNTdDLTI0MzkzNEFBNzFFMF9iMzZmN2JmMi1iNGE0LTQ2ODMtOWQ0MC03Y2FmYzUyNDRmM2QiDQp9"
+		}
+	}
+}

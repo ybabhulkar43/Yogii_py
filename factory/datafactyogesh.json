@@ -1,0 +1,9 @@
+{
+	"name": "datafactyogesh",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fe828fe5-b4df-4e3c-be68-263d7dd42756",
+		"tenantId": "c2247933-e1b2-4d6a-8118-8171f969ce68"
+	}
+}
