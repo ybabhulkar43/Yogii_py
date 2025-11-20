@@ -11,6 +11,38 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"Dataflow_linkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dataflow_linkedService'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"Dataflow_linkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Dataflow_linkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sales"
+		},
+		"Dataflow_linkedService_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "root"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\YOGESH\\Desktop\\employee_records.csv"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "ybabhulkar43@outlook.com"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -40,6 +72,30 @@
 					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"Dataflow_linkedService_password": {
+						"value": "[parameters('Dataflow_linkedService_password')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"Dataflow_linkedService_properties_typeProperties_server": {
+						"value": "[parameters('Dataflow_linkedService_properties_typeProperties_server')]"
+					},
+					"Dataflow_linkedService_properties_typeProperties_database": {
+						"value": "[parameters('Dataflow_linkedService_properties_typeProperties_database')]"
+					},
+					"Dataflow_linkedService_properties_typeProperties_username": {
+						"value": "[parameters('Dataflow_linkedService_properties_typeProperties_username')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
 					}
 				}
 			},

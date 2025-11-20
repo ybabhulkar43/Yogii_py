@@ -7,6 +7,30 @@
 		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"Dataflow_linkedService_password": {
+			"value": ""
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"Dataflow_linkedService_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"Dataflow_linkedService_properties_typeProperties_database": {
+			"value": "sales"
+		},
+		"Dataflow_linkedService_properties_typeProperties_username": {
+			"value": "root"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "C:\\Users\\YOGESH\\Desktop\\employee_records.csv"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "ybabhulkar43@outlook.com"
 		}
 	}
 }

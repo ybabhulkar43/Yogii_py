@@ -10,6 +10,38 @@
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"Dataflow_linkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dataflow_linkedService'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"Dataflow_linkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Dataflow_linkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sales"
+		},
+		"Dataflow_linkedService_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "root"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\YOGESH\\Desktop\\employee_records.csv"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "ybabhulkar43@outlook.com"
 		}
 	},
 	"variables": {
@@ -70,14 +102,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText1",
+								"referenceName": "dataflow2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DelimitedText2",
+								"referenceName": "DelimitedText3",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -90,8 +122,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]"
+				"[concat(variables('factoryId'), '/datasets/dataflow2')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]"
 			]
 		},
 		{
@@ -108,7 +140,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "sales_data (2).csv",
+						"fileName": "pizza_sales.csv",
 						"container": "inputdata"
 					},
 					"columnDelimiter": ",",
@@ -184,6 +216,78 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "firstinputdata"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Month",
+						"type": "String"
+					},
+					{
+						"name": "Region",
+						"type": "String"
+					},
+					{
+						"name": "Product",
+						"type": "String"
+					},
+					{
+						"name": "Amount",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "employee_records.csv",
+						"container": "raw"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage2')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -195,6 +299,92 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Dataflow_linkedService')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "this is the dataflow linked service activity",
+				"annotations": [],
+				"type": "MySql",
+				"typeProperties": {
+					"server": "[parameters('Dataflow_linkedService_properties_typeProperties_server')]",
+					"port": 3306,
+					"database": "[parameters('Dataflow_linkedService_properties_typeProperties_database')]",
+					"username": "[parameters('Dataflow_linkedService_properties_typeProperties_username')]",
+					"sslMode": 1,
+					"useSystemTrustStore": 0,
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Dataflow_linkedService_password')]"
+					},
+					"driverVersion": "v2"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "FileServer",
+				"typeProperties": {
+					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
+					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('FileServer1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataFlow Trigger')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "This is the trigger for data repication of Sales data",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "Dataflow",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2025-11-19T05:42:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Dataflow')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/integrationRunUAEDOT')]",
