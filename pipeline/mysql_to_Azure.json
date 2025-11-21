@@ -20,14 +20,12 @@
 						"type": "MySqlSource"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "ParquetSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"type": "ParquetWriteSettings"
 						}
 					},
 					"enableStaging": false,
@@ -48,7 +46,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "datatoazure",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					}
 				]

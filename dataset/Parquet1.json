@@ -1,9 +1,18 @@
 {
 	"name": "Parquet1",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "`netflix_movies`.txt",
+				"container": "inputdata"
+			},
 			"compressionCodec": "snappy"
 		},
 		"schema": [
