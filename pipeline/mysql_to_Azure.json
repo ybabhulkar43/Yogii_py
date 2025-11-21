@@ -48,7 +48,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Mysqltoazure",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
