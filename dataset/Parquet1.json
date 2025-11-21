@@ -1,0 +1,60 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "order_details_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "order_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "pizza_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "quantity",
+				"type": "UTF8"
+			},
+			{
+				"name": "order_date",
+				"type": "UTF8"
+			},
+			{
+				"name": "order_time",
+				"type": "UTF8"
+			},
+			{
+				"name": "unit_price",
+				"type": "UTF8"
+			},
+			{
+				"name": "total_price",
+				"type": "UTF8"
+			},
+			{
+				"name": "pizza_size",
+				"type": "UTF8"
+			},
+			{
+				"name": "pizza_category",
+				"type": "UTF8"
+			},
+			{
+				"name": "pizza_ingredients",
+				"type": "UTF8"
+			},
+			{
+				"name": "pizza_name",
+				"type": "UTF8"
+			}
+		]
+	}
+}

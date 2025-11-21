@@ -1,0 +1,15 @@
+{
+	"name": "mysqlDatasource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MySql1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`netflix_movies`"
+		}
+	}
+}
