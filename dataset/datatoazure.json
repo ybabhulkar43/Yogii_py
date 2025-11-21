@@ -2,7 +2,7 @@
 	"name": "datatoazure",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage2",
+			"referenceName": "AzureBlobStorage3",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "raw"
+				"container": "inputdata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
