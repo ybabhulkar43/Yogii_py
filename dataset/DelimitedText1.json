@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "`netflix_movies`.txt",
 				"container": "raw"
 			},
 			"columnDelimiter": ",",
