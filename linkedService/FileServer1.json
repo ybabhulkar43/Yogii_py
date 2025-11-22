@@ -6,8 +6,8 @@
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "C:\\Users\\YOGESH\\Desktop\\",
-			"userId": "YOGESH",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiYzE3OTA2OC04MjdlLTQyZjctOGNhNS1iZjdiMjU1OGI0NzEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"userId": "ybabhulkar43@outlook.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjZmQzMzBlMi02MGVjLTQ5NDUtYTVmMi01MjQwZTA5MjQ1MzAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRunUAEDOT",
