@@ -3,7 +3,7 @@
 	"properties": {
 		"description": "This is the trigger for data repication of Sales data",
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
