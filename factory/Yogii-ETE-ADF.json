@@ -1,0 +1,9 @@
+{
+	"name": "Yogii-ETE-ADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a46eb4f1-0e7c-4a4d-889c-b578f40290b5",
+		"tenantId": "c2247933-e1b2-4d6a-8118-8171f969ce68"
+	}
+}
