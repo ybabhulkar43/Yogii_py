@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Yogii-ETE-ADF"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"MySql1_password": {
+			"value": ""
+		},
+		"MySql2_password": {
+			"value": ""
+		},
+		"MySql3_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://yogiistorageacc.dfs.core.windows.net/"
+		},
+		"MySql1_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"MySql1_properties_typeProperties_database": {
+			"value": "sales"
+		},
+		"MySql1_properties_typeProperties_username": {
+			"value": "root"
+		},
+		"MySql2_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"MySql2_properties_typeProperties_database": {
+			"value": "sales"
+		},
+		"MySql2_properties_typeProperties_username": {
+			"value": "root"
+		},
+		"MySql3_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"MySql3_properties_typeProperties_database": {
+			"value": "sales"
+		},
+		"MySql3_properties_typeProperties_username": {
+			"value": "root"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
