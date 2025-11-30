@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage2",
@@ -9,7 +9,8 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "transformed-data"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -17,6 +18,5 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
